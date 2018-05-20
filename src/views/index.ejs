@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div class="container">
+      <h1><%= title %></h1>
+      <form action="/add" method="post">
+        <legend>
+        Add a name
+      </legend>
+      <div class="form-group">
+        <input type="text" id="title" class="form-control" name="name">
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Add a surname" class="form-control" name="surname" rows="1" cols="50"></textarea>
+      </div>
+        <button class="btn btn-primary" type="submit">Add</button>
+      </form>
+      <hr>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Surname</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for (var i =0; i< tasks.length; i++) { %>
+              <tr>
+             <td><%= i + 1%></td>
+             <td><strong><%= tasks[i].name %></strong></td>
+             <td><%= tasks[i].surname %></td>
+             <td>
+               <a
+
+               <a href="/delete/<%= tasks[i]._id %>"
+                 class="btn btn-danger">
+                 Delete
+               </a>
+               <a href="/edit/<%= tasks[i]._id %>" class="btn btn-info">
+                 Edit
+               </a>
+             </td>
+           </tr>
+              <% } %>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      document.getElementById('title').focus;
+    </script>
+  </body>
+</html>

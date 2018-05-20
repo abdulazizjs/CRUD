@@ -1,0 +1,25 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "lodash": "^4.17.10",
+    "mongodb": "^3.1.0-beta4",
+    "mongoose": "^5.1.1",
+    "morgan": "^1.9.0",
+    "validator": "^10.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  }
+}
