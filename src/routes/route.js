@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 
 router.post('/add', (req, res) => {
-  let body = _.pick(req.body, ['name', 'surname',]);
+  let body = _.pick(req.body, ['name', 'surname']);
   let sts = req.body.status;
   sts = false;
   var todo = new Todo(body, sts);
@@ -29,7 +29,7 @@ router.post('/add', (req, res) => {
 
 
 router.get('/edit/:id', async (req, res) => {
-  let body = _.pick(req.body, ['name', 'surname',]);
+  let body = _.pick(req.body, ['name', 'surname']);
   const { id } = req.params;
   await Todo.FindOneAndUpdate({_id: id}, {set: body}).then((tasks) => {
       if(!tasks){
